@@ -1,0 +1,25 @@
+# List of repositories to use within your workspace
+# See https://github.com/dirk-thomas/vcstool
+repositories:
+  # MoveIt 2
+  ros-planning/moveit2/moveit_visual_tools:
+    type: git
+    url: https://github.com/ros-planning/moveit_visual_tools.git
+    version: ros2
+  ros-planning/moveit2/moveit2:
+    type: git
+    url: https://github.com/km-robotics/moveit2.git
+    version: km-devel-galactic
+  ros-planning/moveit2/moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs
+    version: 2.2.0
+  ros-planning/moveit2/ompl:
+    type: git
+    url: https://github.com/ompl/ompl.git
+    version: main
+
+  rviz_visual_tools:
+    type: git
+    url: https://github.com/PickNikRobotics/rviz_visual_tools.git
+    version: ros2
