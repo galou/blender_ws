@@ -1,12 +1,25 @@
-#include "trajectory_blender/blender.hpp"
+#include <trajectory_blender/blender.hpp>
+
+#include <trajectory_blender/plan_conditions.hpp>  // PlanConditions.
+
+#include <Eigen/Geometry>  // Eigen::{Isometry3d,Vector3d,VectorXd,...}.
 
 #include <moveit/moveit_cpp/planning_component.h>  // moveit_cpp::PlanningComponent.
+#include <moveit/planning_scene/planning_scene.h>  // planning_scene::PlanningSceneConstPtr.
+#include <moveit/robot_state/robot_state.h>  // moveit::core::RobotState.
+#include <moveit/robot_trajectory/robot_trajectory.h>  // robot_trajectory::{RobotTrajectory,RobotTrajectoryPtr}.
 
+#include <moveit_msgs/msg/move_it_error_codes.hpp>  // moveit_msgs::msg::MoveItErrorCodes.
 #include <moveit_msgs/msg/robot_state.hpp>  // moveit_msgs::msg::RobotState.
 
 #include <moveit/trajectory_processing/ruckig_traj_generator.h>  // trajectory_processing::RuckigGenerator.
 
+#include <rclcpp/logging.hpp>  // rclcpp::Logger.
+
 #include <algorithm>  // std::{copy_n,find,max,min,partial_sort,transform}.
+#include <cstdint>  // std::size_t.
+#include <exception>  /// std::runtime_error.
+#include <limits>  // std::numeric_limits.
 #include <numeric>  // For std::iota.
 #include <string>  // std::string.
 #include <vector>  // std::vector.

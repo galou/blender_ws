@@ -4,6 +4,10 @@
 #include <trajectory_blender/visibility_control.h>
 
 #include <moveit/moveit_cpp/planning_component.h>  // moveit_cpp::PlanningComponent.
+#include <moveit/planning_scene/planning_scene.h>  // planning_scene::PlanningSceneConstPtr.
+#include <moveit/robot_trajectory/robot_trajectory.h>  // robot_trajectory::RobotTrajectoryPtr.
+
+#include <rclcpp/logging.hpp>  // rclcpp::Logger.
 
 #include <vector>  // std::vector.
 
